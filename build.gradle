@@ -24,3 +24,16 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+
+// Needs improvements.
+// Lots of improvements and learn gradle well.
+// Can be very very useful
+
+task serve(type: Exec) {
+    commandLine './gradlew.bat', 'shibasis:bootRun'
+}
+
+task runApp(type: Exec) {
+    commandLine './gradlew.bat', 'app:runApp'
+}
