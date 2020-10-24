@@ -1,5 +1,6 @@
 package com.overlord.server
 
+import com.overlord.common.HelloWorld
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 import org.springframework.web.bind.annotation.GetMapping
@@ -21,4 +22,7 @@ class HomePage {
 
 	@GetMapping("/hello")
 	fun testObject() = Hello("Shibasis Is Patnaik")
+
+	@GetMapping("/common")
+	fun testCommonModule() = Hello(HelloWorld())
 }
