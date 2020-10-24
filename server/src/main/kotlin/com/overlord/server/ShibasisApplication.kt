@@ -1,4 +1,4 @@
-package com.example.shibasis
+package com.overlord.server
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
@@ -12,8 +12,13 @@ fun main(args: Array<String>) {
 	runApplication<ShibasisApplication>(*args)
 }
 
+data class Hello(val text: String)
+
 @RestController
 class HomePage {
 	@GetMapping("/")
 	fun helloSpring() = "Hello Spring"
+
+	@GetMapping("/hello")
+	fun testObject() = Hello("Shibasis Is Patnaik")
 }

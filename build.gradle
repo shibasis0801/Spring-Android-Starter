@@ -31,7 +31,7 @@ task clean(type: Delete) {
 // Can be very very useful
 
 task serve(type: Exec) {
-    commandLine './gradlew.bat', 'shibasis:bootRun'
+    commandLine './gradlew.bat', 'server:bootRun'
 }
 
 task runApp(type: Exec) {

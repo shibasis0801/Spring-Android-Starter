@@ -1,0 +1,1 @@
+Please use a proper JDK in your configuration instead of JRE

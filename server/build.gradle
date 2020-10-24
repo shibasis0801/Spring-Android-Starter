@@ -2,7 +2,8 @@ plugins {
 	id 'org.springframework.boot' version '2.3.4.RELEASE'
 	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
 	id "org.jetbrains.kotlin.jvm"
-	id "org.jetbrains.kotlin.plugin.spring" version "1.4.10"
+	id 'java'
+	id "org.jetbrains.kotlin.plugin.spring" version "$kotlin_version"
 }
 
 group = 'com.example'
@@ -23,6 +24,8 @@ repositories {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-webflux'
+	implementation "org.springframework.boot:spring-boot-starter-websocket"
+	implementation "org.springframework.boot:spring-boot-devtools"
 	implementation "com.fasterxml.jackson.module:jackson-module-kotlin"
 	implementation "io.projectreactor.kotlin:reactor-kotlin-extensions"
 	implementation "org.jetbrains.kotlin:kotlin-reflect"
