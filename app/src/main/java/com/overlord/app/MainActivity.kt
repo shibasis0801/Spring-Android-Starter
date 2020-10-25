@@ -20,8 +20,8 @@ import com.overlord.common.api.server.getDiagnosticsAPI
 import kotlinx.coroutines.launch
 
 class HelloViewModel: ViewModel() {
-//    private val diagnosticsAPI = getDiagnosticsAPI("http://${BuildConfig.IP_LOCAL_SERVER}:8080")
-    private val diagnosticsAPI = getDiagnosticsAPI("http://192.168.43.64:8080")
+    private val diagnosticsAPI = getDiagnosticsAPI("http://${BuildConfig.IP_LOCAL_SERVER}:8080")
+//    private val diagnosticsAPI = getDiagnosticsAPI("http://192.168.43.64:8080")
     val name = MutableLiveData("Hello")
 
     fun getResponse() {
