@@ -27,3 +27,19 @@ fun getRetrofit(endpointBase: String) =
         .client(Networking.http)
         .addConverterFactory(MoshiConverterFactory.create(Networking.moshi))
         .build()
+
+
+/*
+WebSocket implementation Idea
+
+Single websocket using OkHTTP and Moshi.
+Use Kotlin Channels and Flow to create something bidirectional.
+Use UUID.randomUUID to generate deviceIDs before sending to server. (put in DataStore)
+Have an OkHTTP interceptor which will send deviceID with every request.
+
+Will have a small serialization framework for sending commands to/from
+Implement a basic group chat application using this.
+
+*/
+
+
