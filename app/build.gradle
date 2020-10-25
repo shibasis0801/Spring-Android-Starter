@@ -28,7 +28,7 @@ android {
 
     composeOptions {
         kotlinCompilerVersion kotlin_version
-        kotlinCompilerExtensionVersion compose
+        kotlinCompilerExtensionVersion compose_version
     }
 
     buildTypes {
@@ -50,10 +50,9 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
-    implementation android_compose
-
-
-
+    implementation androidCompose
+    implementation androidCoroutines
+    implementation androidLifecycle
 }
 
 task runApp(type: Exec, dependsOn: 'installDebug') {

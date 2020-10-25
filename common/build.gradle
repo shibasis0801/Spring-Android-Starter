@@ -1,6 +1,7 @@
 plugins {
     id 'java-library'
     id 'kotlin'
+    id "org.jetbrains.kotlin.kapt"
 }
 
 java {
@@ -10,4 +11,8 @@ java {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation networking
+    kapt networkingKapt
+
+    implementation coroutines
 }
