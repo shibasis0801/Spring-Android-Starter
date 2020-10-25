@@ -24,7 +24,7 @@ repositories {
 }
 
 dependencies {
-	implementation project(":common")
+	api project(":common")
 	implementation 'org.springframework.boot:spring-boot-starter-webflux'
 	implementation "org.springframework.boot:spring-boot-devtools"
 	implementation "com.fasterxml.jackson.module:jackson-module-kotlin"
