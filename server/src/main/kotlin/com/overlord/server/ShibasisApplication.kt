@@ -2,6 +2,9 @@ package com.overlord.server
 
 
 import com.overlord.common.HelloWorld
+import com.overlord.common.api.server.DiagnosticsAPIConfig
+import com.overlord.common.api.server.DiagnosticsAPIContract
+import com.overlord.common.api.server.Hello
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
@@ -16,16 +19,14 @@ fun main(args: Array<String>) {
 	runApplication<ShibasisApplication>(*args)
 }
 
-data class Hello(val text: String)
 
-//@RestController
-//@RequestMapping(DiagnosticsAPIConfig.BASE)
-//class Diagnostics: DiagnosticsAPIContract {
-//	@GetMapping(DiagnosticsAPIConfig.Routes.HELLO)
-//	override suspend fun helloWorld(): String {
-//		return "HelloWorld"
-//	}
-//}
+
+@RestController
+@RequestMapping(DiagnosticsAPIConfig.BASE)
+class Diagnostics: DiagnosticsAPIContract {
+	@GetMapping(DiagnosticsAPIConfig.Routes.HELLO)
+	override suspend fun helloWorld() = Hello("Hello From Spring")
+}
 
 @RestController
 class HomePage {

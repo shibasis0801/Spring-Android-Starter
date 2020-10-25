@@ -11,20 +11,21 @@ import retrofit2.http.GET
 object DiagnosticsAPIConfig {
     const val BASE = "/diagnostics"
     object Routes {
-        const val HELLO = "$BASE/hello-world"
+        const val HELLO = "/hello-world"
     }
 }
 
+data class Hello(val text: String)
+
 interface DiagnosticsAPIContract {
-    @GET(DiagnosticsAPIConfig.Routes.HELLO)
-    suspend fun helloWorld(): String
+    @GET("hello-world")
+    suspend fun helloWorld(): Hello
 }
 
-val DiagnosticsAPI: DiagnosticsAPIContract by lazy {
-    Retrofit.Builder()
-        .baseUrl("http://localhost:8080")
+
+fun getDiagnosticsAPI(baseURL: String) = Retrofit.Builder()
+        .baseUrl(baseURL + DiagnosticsAPIConfig.BASE + "/")
         .client(Networking.http)
         .addConverterFactory(MoshiConverterFactory.create(Networking.moshi))
         .build()
         .create(DiagnosticsAPIContract::class.java)
-}
